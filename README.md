@@ -26,8 +26,6 @@
 
 - **Effects of `setContract` on State**: Changing withdrawal credentials aka the `rewardRecipient` contract address could corrupt state. For example, if there are initialised validators and `rewardRecipient` is changed via `setContract`, then functions like `getInitializedValidatorAt` may return incorrect withdrawal credentials. This is mitigated by the fact that `setContract` can ony be called by the owner (Redacted DAO multisig) which does extensive due diligence before executing any transactions, and `rewardRecipient` is not expected to change.
 
-> Note: We have acknowledged all findings in referenced Audits and have either fixed them or have mitigated them. These functions are required for the protocol to work as intended.
-
 # Pirex ETH Overview
 
 Pirex ETH is built on top of the Redacted DAO’s Pirex platform and forms the foundation of the Dinero protocol. It is a two-token system built around ETH staking, consisting of pxETH and apxETH, tailored for different user preferences. This design gives users a choice: pxETH for liquidity or apxETH for boosted ETH staking yield.
